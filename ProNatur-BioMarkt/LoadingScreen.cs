@@ -27,8 +27,9 @@ namespace ProNatur_BioMarkt
             if (loadingBarValue >= loadingProgressBar.Maximum)
             {
                 loadingBarTimer.Stop();
-            // Finish loading show main menu screen
+                // Finish loading show main menu screen
                 this.Hide();
+                //Application.Exit();
                 MainMenuScreen mainMenuScreen = new MainMenuScreen();
                 mainMenuScreen.Show();
             }

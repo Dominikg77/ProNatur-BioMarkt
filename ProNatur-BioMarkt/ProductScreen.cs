@@ -16,5 +16,11 @@ namespace ProNatur_BioMarkt
         {
             InitializeComponent();
         }
+
+        private void ProductScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

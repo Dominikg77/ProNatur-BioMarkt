@@ -20,6 +20,7 @@ namespace ProNatur_BioMarkt
         private void btnProducts_Click(object sender, EventArgs e)
         {
             this.Hide();
+            //Application.Exit();
             ProductScreen productsScreen = new ProductScreen();
             productsScreen.ShowDialog();
         }

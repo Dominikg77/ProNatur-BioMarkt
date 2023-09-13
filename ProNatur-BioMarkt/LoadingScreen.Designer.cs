@@ -79,6 +79,7 @@
             // 
             // loadingBarTimer
             // 
+            this.loadingBarTimer.Interval = 50;
             this.loadingBarTimer.Tick += new System.EventHandler(this.loadingBarTimer_Tick);
             // 
             // LoadingScreen

@@ -26,7 +26,7 @@ namespace ProNatur_BioMarkt
 
         }
 
-        private void btnProductSave_Click(object sender, EventArgs e)
+        private void btnProductSaveAndUpdate_Click(object sender, EventArgs e)
         {
 
             string productName = textBoxProductName.Text;
@@ -41,42 +41,23 @@ namespace ProNatur_BioMarkt
                 return;
             }
 
+            string query = "";
 
-            string query = string.Format("INSERT INTO PRODUCTS VALUES ('{0}', '{1}', '{2}', '{3}')", productName, productBrand, productCategory, productPrice);
-            ExecuteQuery(query);
-
-            ClearAllFields();
-            // Update DataGridView
-            ShowProducts();
-
-        }
-
-        private void btnProductEdit_Click(object sender, EventArgs e)
-        {
-
-            string productName = textBoxProductName.Text;
-            string productBrand = textBoxProductBrand.Text;
-            string productCategory = comboBoxProductCategory.Text;
-            float productPrice = float.Parse(textBoxProductPrice.Text.Replace(",", "."), provider);
-
-            if (lastSelectedProduct == 0)
+            if(lastSelectedProduct == 0)
             {
-                MessageBox.Show("Bitte wählen Sie ein Produkt aus!");
-                return;
+               query = string.Format("UPDATE PRODUCTS SET NAME='{0}', BRAND='{1}', CATEGORY='{2}', PRICE='{3}' WHERE ID={4};", productName, productBrand, productCategory, productPrice, lastSelectedProduct);
+            } else
+            {
+                query = string.Format("INSERT INTO PRODUCTS VALUES ('{0}', '{1}', '{2}', '{3}')", productName, productBrand, productCategory, productPrice);
             }
 
-            string query = string.Format("UPDATE PRODUCTS SET NAME='{0}', BRAND='{1}', CATEGORY='{2}', PRICE='{3}' WHERE ID={4};", productName, productBrand, productCategory, productPrice, lastSelectedProduct);
-
             ExecuteQuery(query);
+
             ClearAllFields();
+            lastSelectedProduct = 0;
             // Update DataGridView
             ShowProducts();
 
-        }
-
-        private void btnProductClear_Click(object sender, EventArgs e)
-        {
-            ClearAllFields();
         }
 
         private void btnProductDelete_Click(object sender, EventArgs e)
@@ -98,6 +79,11 @@ namespace ProNatur_BioMarkt
 
         }
 
+        private void btnProductClear_Click(object sender, EventArgs e)
+        {
+            ClearAllFields();
+        }
+
         private void productsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxProductName.Text = productsDGV.SelectedRows[0].Cells[1].Value.ToString();
@@ -106,6 +92,9 @@ namespace ProNatur_BioMarkt
             textBoxProductPrice.Text = productsDGV.SelectedRows[0].Cells[4].Value.ToString();
 
             lastSelectedProduct = (int)productsDGV.SelectedRows[0].Cells[0].Value;
+
+            btnProductSave.Text = "Update";
+
             Console.WriteLine(lastSelectedProduct);
         }
 
@@ -146,6 +135,8 @@ namespace ProNatur_BioMarkt
             textBoxProductPrice.Text = "";
             comboBoxProductCategory.Text = "";
             comboBoxProductCategory.SelectedItem = null;
+            btnProductSave.Text = "Hinzufügen";
+
         }
 
         private void ExecuteQuery(string query)

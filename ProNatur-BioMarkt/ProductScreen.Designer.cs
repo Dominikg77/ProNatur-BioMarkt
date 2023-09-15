@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxProductCategory = new System.Windows.Forms.ComboBox();
             this.btnProductSave = new System.Windows.Forms.Button();
-            this.btnProductEdit = new System.Windows.Forms.Button();
             this.btnProductClear = new System.Windows.Forms.Button();
             this.btnProductDelete = new System.Windows.Forms.Button();
             this.productsDGV = new System.Windows.Forms.DataGridView();
@@ -65,7 +64,7 @@
             this.textBoxProductName.ForeColor = System.Drawing.Color.White;
             this.textBoxProductName.Location = new System.Drawing.Point(81, 30);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(156, 13);
+            this.textBoxProductName.Size = new System.Drawing.Size(150, 13);
             this.textBoxProductName.TabIndex = 1;
             // 
             // textBoxProductBrand
@@ -75,7 +74,7 @@
             this.textBoxProductBrand.ForeColor = System.Drawing.Color.White;
             this.textBoxProductBrand.Location = new System.Drawing.Point(81, 59);
             this.textBoxProductBrand.Name = "textBoxProductBrand";
-            this.textBoxProductBrand.Size = new System.Drawing.Size(156, 13);
+            this.textBoxProductBrand.Size = new System.Drawing.Size(150, 13);
             this.textBoxProductBrand.TabIndex = 3;
             // 
             // label2
@@ -111,7 +110,7 @@
             this.textBoxProductPrice.ForeColor = System.Drawing.Color.White;
             this.textBoxProductPrice.Location = new System.Drawing.Point(81, 120);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(75, 13);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(100, 13);
             this.textBoxProductPrice.TabIndex = 7;
             // 
             // label4
@@ -140,7 +139,7 @@
             "Getränke"});
             this.comboBoxProductCategory.Location = new System.Drawing.Point(81, 88);
             this.comboBoxProductCategory.Name = "comboBoxProductCategory";
-            this.comboBoxProductCategory.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxProductCategory.Size = new System.Drawing.Size(125, 21);
             this.comboBoxProductCategory.TabIndex = 8;
             // 
             // btnProductSave
@@ -153,23 +152,9 @@
             this.btnProductSave.Name = "btnProductSave";
             this.btnProductSave.Size = new System.Drawing.Size(75, 23);
             this.btnProductSave.TabIndex = 9;
-            this.btnProductSave.Text = "Speichern";
+            this.btnProductSave.Text = "Hinzufügen";
             this.btnProductSave.UseVisualStyleBackColor = false;
-            this.btnProductSave.Click += new System.EventHandler(this.btnProductSave_Click);
-            // 
-            // btnProductEdit
-            // 
-            this.btnProductEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnProductEdit.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnProductEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductEdit.ForeColor = System.Drawing.Color.White;
-            this.btnProductEdit.Location = new System.Drawing.Point(162, 139);
-            this.btnProductEdit.Name = "btnProductEdit";
-            this.btnProductEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnProductEdit.TabIndex = 10;
-            this.btnProductEdit.Text = "Bearbeiten";
-            this.btnProductEdit.UseVisualStyleBackColor = false;
-            this.btnProductEdit.Click += new System.EventHandler(this.btnProductEdit_Click);
+            this.btnProductSave.Click += new System.EventHandler(this.btnProductSaveAndUpdate_Click);
             // 
             // btnProductClear
             // 
@@ -177,7 +162,7 @@
             this.btnProductClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnProductClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductClear.ForeColor = System.Drawing.Color.White;
-            this.btnProductClear.Location = new System.Drawing.Point(243, 139);
+            this.btnProductClear.Location = new System.Drawing.Point(162, 139);
             this.btnProductClear.Name = "btnProductClear";
             this.btnProductClear.Size = new System.Drawing.Size(95, 23);
             this.btnProductClear.TabIndex = 11;
@@ -191,7 +176,7 @@
             this.btnProductDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnProductDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductDelete.ForeColor = System.Drawing.Color.White;
-            this.btnProductDelete.Location = new System.Drawing.Point(344, 139);
+            this.btnProductDelete.Location = new System.Drawing.Point(263, 139);
             this.btnProductDelete.Name = "btnProductDelete";
             this.btnProductDelete.Size = new System.Drawing.Size(75, 23);
             this.btnProductDelete.TabIndex = 12;
@@ -232,7 +217,6 @@
             this.Controls.Add(this.productsDGV);
             this.Controls.Add(this.btnProductDelete);
             this.Controls.Add(this.btnProductClear);
-            this.Controls.Add(this.btnProductEdit);
             this.Controls.Add(this.btnProductSave);
             this.Controls.Add(this.comboBoxProductCategory);
             this.Controls.Add(this.textBoxProductPrice);
@@ -265,7 +249,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxProductCategory;
         private System.Windows.Forms.Button btnProductSave;
-        private System.Windows.Forms.Button btnProductEdit;
         private System.Windows.Forms.Button btnProductClear;
         private System.Windows.Forms.Button btnProductDelete;
         private System.Windows.Forms.DataGridView productsDGV;

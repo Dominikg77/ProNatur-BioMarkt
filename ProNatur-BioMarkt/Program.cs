@@ -18,9 +18,7 @@ namespace ProNatur_BioMarkt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoadingScreen());
-            Application.Run(new BillingScreen());
-
+            Application.Run(new LoadingScreen());
         }
     }
 }

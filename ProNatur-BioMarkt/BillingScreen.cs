@@ -134,5 +134,11 @@ namespace ProNatur_BioMarkt
             databaseConnection.Close();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenuScreen mainMenuScreen = new MainMenuScreen();
+            mainMenuScreen.ShowDialog();
+        }
     }
 }

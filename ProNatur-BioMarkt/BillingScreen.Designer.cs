@@ -40,6 +40,7 @@
             this.btnBillingClear = new System.Windows.Forms.Button();
             this.btnBillingSave = new System.Windows.Forms.Button();
             this.billingDGV = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.billingDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,12 +192,27 @@
             this.billingDGV.TabIndex = 16;
             this.billingDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billingDGV_CellClick);
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(712, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Text = "Zurück";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // BillingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 461);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.billingDGV);
             this.Controls.Add(this.btnBillingDelete);
             this.Controls.Add(this.btnBillingClear);
@@ -233,5 +249,6 @@
         private System.Windows.Forms.Button btnBillingClear;
         private System.Windows.Forms.Button btnBillingSave;
         private System.Windows.Forms.DataGridView billingDGV;
+        private System.Windows.Forms.Button btnBack;
     }
 }
